@@ -270,8 +270,14 @@ turn on, word wrap
 to insert emoji
 
 
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+Python...
 
-
+----------------------------------------
+Lists, Tuple, Dictionaries, Sets
+.
+Lists are array of values.  Tuples are like List but immutable.  Dictionaries are collection of keys/values.  Sets store array of element, but each element is unique.
 
 
 
