@@ -1,0 +1,389 @@
+----------------------------------------------------------------------------------------
+1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678
+         1         2         3         4         5         6         7         8
+----------------------------------------
+------------------
+123456789012345678
+------------------
+----------------------------------------
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+Youtube tuts
+
+    watched Python playlist
+https://www.youtube.com/playlist?list=PL0Zuz27SZ-6MQri81d012LwP5jvFZ_scc
+  .currently at: 2
+
+    watched Git
+https://www.youtube.com/playlist?list=PL0Zuz27SZ-6PkWWk_mA2vkimUTJf81mNz
+  .currently at: D
+
+----------------------------------------
+READ / WATCHED
+
+------------------
+  Basic Bash Commands
+https://medium.com/geekculture/basic-bash-commands-c54933183c89
+
+------------------
+  Python AI: How to Build a Neural Network & Make Predictions
+https://realpython.com/python-ai-neural-network/
+
+
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+Bash basic
+
+    go to home directory
+$ cd
+
+    go to folderA
+$ cd folderA
+
+    go back to previous change directory:
+$ cd ..
+
+    display what type of terminal language
+$ echo $0
+
+    display all previously commands used
+$ history
+
+    list files & folders at current directory:
+$ ls
+
+    copy file/directory into directory;
+At current directory, there existed, file newText.txt and folder newFolder;
+Copying newText.txt into newFolder:
+$ cp
+
+    list files & folders at current directory, including hidden:
+$ ls -a
+
+    make directory; creating folder, in this case, newFolder:
+$ mkdir newFolder
+
+    move file from one place to another;
+At current directory, there existed, file newText.txt and folder newFolder;
+Moving newText.txt into newFolder:
+.
+$ mv newText.txt newFolder
+
+    (print working directory) display current directory:
+$ pwd
+
+    remove a file; in this case, newText.txt
+$ rm newText.txt
+
+    remove directory; in this case, newFolder
+$ rmdir newFolder
+
+    create file; in this case, newText.txt:
+$ touch newText.txt
+
+
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+
+----------------------------------------
+Getting started with Git
+
+------------------
+  tutorial followed:
+https://www.youtube.com/playlist?list=PL0Zuz27SZ-6PkWWk_mA2vkimUTJf81mNz
+  Prerequisite:
+installed Git and VSCode
+
+
+----------------------------------------
+Link local project folder to a newly created repo on your acc.
+
+    in VSCode, in terminal Bash, navigate to project folder
+$ git init
+
+    make modification inside project folder;
+    displaying status of each files in project folder;
+    'A' added
+    'M' modified
+    'U' untracked
+$ git status
+
+    staging all (indicated by '.') files, to be ready for commit
+$ git add .
+
+    committing with "message"
+$ git commit -m "here, message for this commit"
+
+    log onto github.com
+    create a new repository, name the repo and leave everthing default
+
+    follow 3rd option,
+    "... or push an existing repository from the command line"
+    which are:
+$ git remote add origin https://github.com/userName/project-u-named.git
+$ git branch -M main
+$ git push -u origin main
+
+    **** this may not happen if credential setup with Github done prior ****
+    a popup generated, asking for credential, follow thru it;
+    check out the repo on github site, notice the entry of commit excuted
+    and its comments; now current directory is tied to the repo created @ github
+
+
+----------------------------------------
+Typical flows using it Git,
+after local project folder is linked with Github repo
+
+    when directory are already tied in with repo on github;
+    work on project, then use commands:
+$ git add .
+$ git status
+$ git commit -m "blah blah blah message"
+$ git push
+
+
+----------------------------------------
+Undo saved file
+
+    restoring file back to the state of its last committed
+$ git restore <file>
+
+
+----------------------------------------
+Undo added file
+
+    unstaging file
+$ git restore --staged index.html
+
+
+----------------------------------------
+Amending comments, b4 {git push} executed
+
+$ git commit -v --amend
+    press 'i'
+    then locate the comment and modify it;
+    press "Esc" then press [Shift + :];
+    now type "wq" (w=write, q=quit), press Enter;
+    do
+$ git log --oneline
+    to verify comments changed
+
+
+----------------------------------------
+Create a branching
+
+    listing of all branches
+$ git branch --list
+
+"
+    making new branch
+$ git branch <myNewBranch>
+    switch onto new branch created, myNewBranch
+$ git checkout myNewBranch
+"
+or
+"
+    making new branch then switch onto it
+$ git checkout -b myNewBranch
+"
+
+
+----------------------------------------
+Rename a branch (b4 its first push????)
+
+$ git branch -m myNewBranch difBranchName
+
+
+----------------------------------------
+Deleting existing branch
+
+$ git branch -D myNewBranch
+
+
+----------------------------------------
+Merging branch
+
+    merging existing branch, myNewContent, into main
+$ git merge myNewContent
+
+
+----------------------------------------
+Restore to a commit, using "revert"
+
+    do
+$ git log --oneline
+
+    copy target commit id (tarComId) to be restore back
+$ git revert <tarComId>
+
+    entering into unix editing mode
+    press [Shift + :], type "wq" (w=write, q=quit), press Enter;
+
+    do
+$ git log --oneline
+    notice the restoring process is treated as another commit;
+    in other words, all the commits after targeted restore point is maintained;
+
+
+----------------------------------------
+Restore to a commit, using "reset", DESTRUCTIVE method
+
+    note that this is a DESTRUCTIVE restoring process, meaning any commits after
+    targeted restore point will be delete
+
+$ git log --oneline
+    copy target commit id (tarComId) to be restore back
+$ git reset <tarComId> --hard
+
+
+----------------------------------------
+----------------------------------------
+Git glossary
+
+$ git branch --list
+    listing of all branches
+
+$ git log
+    details history of commits
+
+$ git log --oneline
+    brief history of commits
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
