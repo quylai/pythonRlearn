@@ -250,62 +250,19 @@ $ git log --oneline
     brief history of commits
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
+Hotkeys in VSCode
+
+  Ctrl /
+comment out selected a code block
+
+  Ctrl D
+selecting following variable of the same name after the first one selected
+
+  Shift Alt down
+copy whole line of code at current location, and paste below
+
 
 
 
