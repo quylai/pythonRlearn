@@ -12,11 +12,10 @@ Youtube tuts
 
     watched Python playlist
 https://www.youtube.com/playlist?list=PL0Zuz27SZ-6MQri81d012LwP5jvFZ_scc
-  .currently at: 2
+  .currently at: 
 
     watched Git
 https://www.youtube.com/playlist?list=PL0Zuz27SZ-6PkWWk_mA2vkimUTJf81mNz
-  .currently at: D
 
 ----------------------------------------
 READ / WATCHED
@@ -276,13 +275,58 @@ Python...
 
 
 ----------------------------------------
+Naming variables and functions are case-sensitive
+
+
+----------------------------------------
 Lists, Tuple, Dictionaries, Sets
 .
 Lists [] are array of values.  Tuples () are like List but immutable.  Dictionaries {} are collection of keys/values.  Sets {} store array of element, but each element is unique.
 
 
 ----------------------------------------
-Naming variables and functions are case-sensitive
+List Comprehension
+
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+newlist = []
+
+# block1
+##################
+for x in fruits:
+  if "a" in x:
+    newlist.append(x)
+##################
+
+# block2
+##################
+newlist = [x for x in fruits if "a" in x]
+##################
+
+print(newlist)
+
+# block1 and block2 code are equivalent
+
+
+----------------------------------------
+Example of list selection
+#
+thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+print(thislist[2:5])
+# output: ['cherry', 'orange', 'kiwi']
+# which is  ind2      ind3	ind4
+
+
+----------------------------------------
+Closure:
+a function having access to the scope of its parent function even after the parent function has returned
+
+
+
+
+
+
+
+
 
 
 
