@@ -268,6 +268,9 @@ turn on, word wrap
   Windows .
 to insert emoji
 
+  Ctrl l
+clear git bash terminal screen
+
 
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
@@ -435,22 +438,97 @@ for num in range(1, 11):
 
 
 ----------------------------------------
+Modules
+
+------------------
+to check current version of python type:
+py -3 --version
+
+#-----------------
+import sys
+import random as rdm
+from enum import Enum
+import myModule
+#-----------------
+
+  line1:
+load module "sys" into your code
+
+  line2:
+"random" module will go by the alias "rdm"
+
+  line3:
+from "enum" module, load "Enum" entity
+
+  line4:
+this is how to call your own python file (.py) into your code; "myModule" is the filename
 
 
+------------------
+------------------
+
+  codes:
+#-----------------
+if __name__ == '__main__':
+...
+#-----------------
+place module source code under this conditional to prevent auto processing when it is being imported from elsewhere 
 
 
+----------------------------------------
+Interacting with command line
+
+codes:
+#-----------------
+def hello(name, lang):
+  greetings = {
+      "English": "Hello",
+      "Spanish": "Hola",
+      "Vietnamese": "Xin chao",
+  }
+  msg = f"{greetings[lang]} {name}!"
+  print(msg)
 
 
+if __name__ == '__main__':
+  import argparse
+
+  parser = argparse.ArgumentParser(
+    description="Provides a personal greeting."
+  )
+
+  parser.add_argument(
+    "-n", "--name", metavar="name",
+    required=True,
+    help="The name of the person to greet."
+  )
+
+  parser.add_argument(
+    "-l", "--lang", metavar="language",
+    required=True, choices=["English", "Spanish", "Vietnamese"],
+    help="The language of the greeting."
+  )
+
+  args = parser.parse_args()
+  hello(args.name, args.lang)
+#-----------------
+
+#
+# Explanation...
+#
+
+------------------
+How to use this code
+
+In gitBash or cmd, go to dir that the file (let it be named, asdf.py) of these codes resided.  Type:
+py asdf.py -n "Andy" -l "Vietnamese"
+
+Output:
+Xin chao Andy!
+------------------
 
 
-
-
-
-
-
-
-
-
+----------------------------------------
 
 
 
