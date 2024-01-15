@@ -580,14 +580,15 @@ py asdf.py -n "Andy"
 
 
 ----------------------------------------
+----------------------------------------------------------------------------------------
 ----------------------------------------
 Higher order functions
 .
 a function, taking in function as an argument or
 returning function
 
-------------------
-------------------
+
+----------------------------------------
 Lambda: is an instance of a function
 .
 #-----------------
@@ -620,8 +621,7 @@ print(addTwenty(8))
 #-----------------
 
 
-------------------
-------------------
+----------------------------------------
 Higher order function, map
 .
 executes a specified function for each item in an iterable
@@ -636,8 +636,7 @@ print(list(squared_nums))
 #-----------------
 
 
-------------------
-------------------
+----------------------------------------
 Higher order function, filter
 .
 returns an iterator where the items are filtered through a function for true
@@ -652,20 +651,98 @@ print(list(odd_nums))
 #-----------------
 
 
+----------------------------------------
+----------------------------------------------------------------------------------------
+----------------------------------------
+Classes
+.
+are a blueprint of a thing, naming with 1st letter cap; instances of a class are an objects; within class, there are properties (attributes) and methods (functions) 
+
+#-----------------
+class Vehicle:
+  def __init__(self, make, model):
+    self.make = make
+    self.model = model
+  
+  def moves(self):
+    print("Moves along...")
+
+  def get_make_model(self):
+    print(f"I'm a {self.make} {self.model}.")
+
+my_car = Vehicle("Toyota", "Corolla")
+
+my_car.get_make_model()
+my_car.moves()
+# I'm a Toyota Corolla.
+# Moves along...
+
+class Airplane(Vehicle):
+  def __init__(self, make, model, faa_id):
+    super().__init__(make, model)
+    self.faa_id = faa_id
+  def moves(self):
+    print('Flies along...')
+
+class Truck(Vehicle):
+  def moves(self):
+    print("Rumbles along...")
+
+class GolfCart(Vehicle):
+  pass
+
+aPlane = Airplane("Boeing", "737", "T-123456")
+aTruck = Truck("Toyota", "Tundra")
+golfwagon = GolfCart("Yamaha", "GC100")
+
+aPlane.get_make_model()
+aPlane.moves()
+aTruck.get_make_model()
+aTruck.moves()
+golfwagon.get_make_model()
+golfwagon.moves()
+# I'm a Boeing 737.
+# Flies along...
+# I'm a Toyota Tundra.
+# Rumbles along...
+# I'm a Yamaha GC100.
+# Moves along...
+
+print("\n\n")
+
+for v in (my_car, aPlane, aTruck, golfwagon):
+  v.get_make_model()
+  v.moves()
+# I'm a Toyota Corolla.
+# Moves along...
+# I'm a Boeing 737.
+# Flies along...
+# I'm a Toyota Tundra.
+# Rumbles along...
+# I'm a Yamaha GC100.
+# Moves along...
+#-----------------
+
+#
+# explanation
+#
+
+------------------
+Inheritance
+.
+class Airplane, Truck, and GolfCart are inherited from class Vehicle
 
 
+#-----------------
+    super().__init__(make, model)
+#-----------------
+.
+this is Airplane inheriting "make" and "model" from class Vehicle
 
 
-
-
-
-
-
-
-
-
-
-
+----------------------------------------
+----------------------------------------
+----------------------------------------
 
 
 
