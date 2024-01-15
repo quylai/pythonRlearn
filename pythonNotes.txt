@@ -383,8 +383,49 @@ print(test_dict)
 
 
 ----------------------------------------
+Scope
+
+#-----------------
+def myfunc1():
+
+  x = "John"
+  
+  def myfunc2():
+    nonlocal x
+    x = "hello"
+    
+  myfunc2() 
+  return x
+
+print(myfunc1())
+# Output:
+# hello
+#-----------------
+.
+when nested function declared a variable of immediate outer-function to be "nonlocal", that nested function now able to modify targeted variable
+
+
+#-----------------
+x = "awesome"
+
+def myfunc():
+  global x
+  x = "fantastic"
+
+myfunc()
+print("Python is " + x)
+
+# Output:
+# Python is fantastic 
+#-----------------
+.
+when a function declared the most outer scope variable "global", that variable are now modifiable by said function
+
+
+----------------------------------------
 Closure:
 a function having access to the scope of its parent function even after the parent function has returned
+
 
 ----------------------------------------
 Strings formats
@@ -529,30 +570,86 @@ Xin chao Andy!
 
 
 ----------------------------------------
+"16 - Student Challenge"
+
+------------------
+To start the game
+
+In gitBash or cmd, go to dir that the file arcade.py resided.  Type:
+py asdf.py -n "Andy"
 
 
+----------------------------------------
+----------------------------------------
+Higher order functions
+.
+a function, taking in function as an argument or
+returning function
+
+------------------
+------------------
+Lambda: is an instance of a function
+.
+#-----------------
+squared = lambda num : num * num
+#-----------------
+
+is the same as
+
+#-----------------
+def squared(num): return num * num
+#-----------------
 
 
+------------------
+------------------
+Example using Lambda
+
+#-----------------
+def funcBuilder(x):
+  return lambda num: num + x
+
+addTen = funcBuilder(10)
+addTwenty = funcBuilder(20)
+
+print(addTen(7))
+print(addTwenty(8))
+# Output:
+# 17
+# 28
+#-----------------
 
 
+------------------
+------------------
+Higher order function, map
+.
+executes a specified function for each item in an iterable
+
+#-----------------
+numbers = [3, 4, 5]
+squared_nums = map(lambda num: num * num, numbers)
+print(list(squared_nums))
+
+# Output:
+# [9, 16, 25]
+#-----------------
 
 
+------------------
+------------------
+Higher order function, filter
+.
+returns an iterator where the items are filtered through a function for true
 
+#-----------------
+numbers = [3, 4, 5]
+odd_nums = filter(lambda num: num % 2 != 0, numbers)
+print(list(odd_nums))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# Output:
+# [3, 5]
+#-----------------
 
 
 
