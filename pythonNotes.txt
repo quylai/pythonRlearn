@@ -282,9 +282,12 @@ pythonQuirks
 
 - Naming variables and functions are case-sensitive
 - strings are immutable
+
 - seems like using Numpy is more optimal for large data set;
   for example 2D array is more efficient in Numpy but all of array elements must be
   of the same data type
+
+- functions needed to be defined before it could be call
 
 ----------------------------------------
 Lists, Tuple, Dictionaries, Sets
@@ -395,14 +398,14 @@ def myfunc1():
     x = "hello"
     
   myfunc2() 
-  return x
+  print(x)
 
-print(myfunc1())
+myfunc1()
 # Output:
 # hello
 #-----------------
 .
-when nested function declared a variable of immediate outer-function to be "nonlocal", that nested function now able to modify targeted variable
+given that variable of outer function and nested function has the same name, when keyword "nonlocal" declared on that variable inside nested function, it's now can modify the version in outer function
 
 
 #-----------------
@@ -419,7 +422,7 @@ print("Python is " + x)
 # Python is fantastic 
 #-----------------
 .
-when a function declared the most outer scope variable "global", that variable are now modifiable by said function
+given that variable in main and in function has the same name, when keyword "global" declared on that variable inside the function, it's now can modify the version in main
 
 
 ----------------------------------------
@@ -701,6 +704,7 @@ aTruck.get_make_model()
 aTruck.moves()
 golfwagon.get_make_model()
 golfwagon.moves()
+#
 # I'm a Boeing 737.
 # Flies along...
 # I'm a Toyota Tundra.
@@ -713,6 +717,7 @@ print("\n\n")
 for v in (my_car, aPlane, aTruck, golfwagon):
   v.get_make_model()
   v.moves()
+#
 # I'm a Toyota Corolla.
 # Moves along...
 # I'm a Boeing 737.
@@ -734,10 +739,11 @@ class Airplane, Truck, and GolfCart are inherited from class Vehicle
 
 
 #-----------------
+  def __init__(self, make, model, faa_id):
     super().__init__(make, model)
 #-----------------
 .
-this is Airplane inheriting "make" and "model" from class Vehicle
+class Airplane needed to redefine "make" and "model" from class Vehicle, due to a new property (faa_id) is be added to class Airplane
 
 
 ----------------------------------------
