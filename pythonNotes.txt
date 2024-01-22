@@ -29,9 +29,12 @@ https://medium.com/geekculture/basic-bash-commands-c54933183c89
 https://realpython.com/python-ai-neural-network/
 
 
+
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
-Bash basic
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+Bash basic commands
 
     go to home directory
 $ cd
@@ -81,6 +84,9 @@ $ rmdir newFolder
 $ touch newText.txt
 
 
+
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 
@@ -251,6 +257,8 @@ $ git log --oneline
 
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
 Hotkeys in VSCode
 
   Ctrl /
@@ -274,9 +282,13 @@ clear git bash terminal screen
 
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
 Python...
 
 
+----------------------------------------
+----------------------------------------------------------------------------------------
 ----------------------------------------
 pythonQuirks
 
@@ -290,11 +302,15 @@ pythonQuirks
 - functions needed to be defined before it could be call
 
 ----------------------------------------
+----------------------------------------------------------------------------------------
+----------------------------------------
 Lists, Tuple, Dictionaries, Sets
 .
 Lists [] are array of values.  Tuples () are like List but immutable.  Dictionaries {} are collection of keys/values.  Sets {} store array of element, but each element is unique.
 
 
+----------------------------------------
+----------------------------------------------------------------------------------------
 ----------------------------------------
 List Comprehension
 
@@ -323,6 +339,8 @@ print(newlist)
 
 
 ----------------------------------------
+----------------------------------------------------------------------------------------
+----------------------------------------
 Example of list selection
 
 thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
@@ -333,6 +351,8 @@ print(thislist[2:5])
 #   ind2      ind3	ind4
 
 
+----------------------------------------
+----------------------------------------------------------------------------------------
 ----------------------------------------
 2D array using list comprehension
 
@@ -353,6 +373,8 @@ print(arr)
 
 
 ----------------------------------------
+----------------------------------------------------------------------------------------
+----------------------------------------
 Iterating over 2D array, and replace its element with values from a list
 
 arr = [[1, 2, 3, 4, 5], [3, 4, 5, 6, 7], [5, 6, 7, 8, 9]]
@@ -370,6 +392,8 @@ print(arr)
 
 
 ----------------------------------------
+----------------------------------------------------------------------------------------
+----------------------------------------
 Iterating over dictionaryto update its value with a list
 
 test_dict = {'aaa' : [1, 2], 'bbb' : [4, 5], 'ccc' : [7, 8]}
@@ -385,6 +409,8 @@ print(test_dict)
 # {'aaa': [11, 22], 'bbb': [44, 55], 'ccc': [77, 88]}
 
 
+----------------------------------------
+----------------------------------------------------------------------------------------
 ----------------------------------------
 Scope
 
@@ -426,10 +452,14 @@ given that variable in main and in function has the same name, when keyword "glo
 
 
 ----------------------------------------
+----------------------------------------------------------------------------------------
+----------------------------------------
 Closure:
 a function having access to the scope of its parent function even after the parent function has returned
 
 
+----------------------------------------
+----------------------------------------------------------------------------------------
 ----------------------------------------
 Strings formats
 
@@ -461,6 +491,8 @@ print(message)
 
 
 ----------------------------------------
+----------------------------------------------------------------------------------------
+----------------------------------------
 f-strings format
 
 #-----------------
@@ -481,6 +513,8 @@ for num in range(1, 11):
 #-----------------
 
 
+----------------------------------------
+----------------------------------------------------------------------------------------
 ----------------------------------------
 Modules
 
@@ -519,6 +553,8 @@ if __name__ == '__main__':
 place module source code under this conditional to prevent auto processing when it is being imported from elsewhere 
 
 
+----------------------------------------
+----------------------------------------------------------------------------------------
 ----------------------------------------
 Interacting with command line
 
@@ -573,6 +609,8 @@ Xin chao Andy!
 
 
 ----------------------------------------
+----------------------------------------------------------------------------------------
+----------------------------------------
 "16 - Student Challenge"
 
 ------------------
@@ -591,6 +629,8 @@ a function, taking in function as an argument or
 returning function
 
 
+----------------------------------------
+----------------------------------------------------------------------------------------
 ----------------------------------------
 Lambda: is an instance of a function
 .
@@ -625,6 +665,8 @@ print(addTwenty(8))
 
 
 ----------------------------------------
+----------------------------------------------------------------------------------------
+----------------------------------------
 Higher order function, map
 .
 executes a specified function for each item in an iterable
@@ -639,6 +681,8 @@ print(list(squared_nums))
 #-----------------
 
 
+----------------------------------------
+----------------------------------------------------------------------------------------
 ----------------------------------------
 Higher order function, filter
 .
@@ -747,8 +791,118 @@ class Airplane needed to redefine "make" and "model" from class Vehicle, due to 
 
 
 ----------------------------------------
+----------------------------------------------------------------------------------------
 ----------------------------------------
+PIP (Preferred Installer Program)
+
+
+------------------
+installing package
+
+in bash of vscode, to install such program, type:
+$ py -m pip install pkgOfInterest
+.
+where pkgOfInterest is something like: requests, numpy, python-dotenv, ....
+
+
+------------------
+$ py -m pip list
+------------------
+list all packages installed and its version
+
+
 ----------------------------------------
+.venv folder
+
+------------------
+$ py -m venv .venv
+------------------
+create .venv folder
+
+
+------------------
+$ source .venv/Scripts/activate
+------------------
+to start virtual environment, based on all those file in .venv folder;
+noticed thereafter each command executed there is "(.venv)" displayed trailing, meaning the scope of these code are currently within virtual environment
+.
+to show a list of package in .venv folder, type:
+$ pip list
+.
+to show info of pkgOfInterest, type:
+$ pip show pkgOfInterest
+.
+REMEMBER to include ".venv" in .gitignore file
+
+
+------------------
+$ deactivate
+------------------
+to turn off virtual environment
+
+
+------------------
+py -m pip freeze > requirements.txt
+------------------
+create a requirements.txt to show necessary packages needed for this project
+
+
+----------------------------------------
+.gitignore file
+
+content of .gitignore file
+------------------
+.venv
+.env
+------------------
+with the content listed above, this is saying any file/folder with name ".venv" or ".env" will excluded from {git push} command
+
+
+----------------------------------------
+.env file
+this is where credential necessary for your program is stored; also this filename should be listed in .gitignore file
+.
+example content of file
+------------------
+API_KEY=0123456789asdf
+------------------
+notes the assignment to variable does not need to be in quotes
+.
+to include all variable contained in this file, code file header should have:
+from dotenv import load_dotenv
+
+
+----------------------------------------
+########################################
+----------------------------------------
+note that vscode is implementing global package when exectuting code clicking "Run Python file"; to actually using packages from .venv, you need to run the python code in your git bash 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
